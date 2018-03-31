@@ -60,3 +60,40 @@ while True:
 		exit()
 
 ```
+The  pulse function is almost the same as the blink function except that it doesn't turn the LED on and off. It just fades in and out. Here's a basic pulse program with just the default pulse settings:
+
+```python
+from gpiozero import PWMLED
+from signal import pause
+
+red = PWMLED(21)
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		red.pulse()
+		pause()
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		red.close()
+		exit()
+```
+
+Now try adjusting the pulse parameters.
+
+```python
+from gpiozero import PWMLED
+from signal import pause
+
+red = PWMLED(21)
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		red.pulse(fade_in_time = 2, fade_out_time = 2, n=None, background=True)
+		pause()
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		red.close()
+		exit()
+```
