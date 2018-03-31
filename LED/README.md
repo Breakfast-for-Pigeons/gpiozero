@@ -55,7 +55,7 @@ red = LED(21)
 print("Press Crtl-C to stop the program.")
 while True:	
 	try:
-		# Blink once every 0.5 seconds, indefinitely
+		# Blink once every 0.5 seconds, 10 times
 		red.blink(on_time=0.5, off_time=0.5, n=10, background=True)
 		pause()
 	except KeyboardInterrupt:
