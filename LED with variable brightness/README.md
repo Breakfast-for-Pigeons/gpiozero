@@ -41,3 +41,22 @@ while True:
 
 ```
 
+Now make the LED blink 10 times instead of indefinitely. Just change **n** from *None* to *10*.
+
+```python
+from gpiozero import PWMLED
+from signal import pause
+
+red = PWMLED(pin=21, active_high=True, initial_value=0, frequency=100)
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		red.blink(on_time=0.5, off_time=0.5, fade_in_time = 2, fade_out_time = 2, n=10, background=True)
+		pause()
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		red.close()
+		exit()
+
+```
