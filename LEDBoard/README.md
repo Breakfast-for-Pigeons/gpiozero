@@ -27,7 +27,7 @@ while True:
 		exit()
 ```
 
-Here's the next example. This enables pulse width modulation. Each of the LEDs will have a different brightness.
+Here's the next example, which enables pulse width modulation. Each of the LEDs will have a different brightness.
 
 ```python
 from gpiozero import LEDBoard
@@ -45,3 +45,26 @@ while True:
 		leds.close()
 		exit()
 ```
+
+This next example is from the advanced recipes. It will cycle through the LEDs one by one.
+
+```python
+from gpiozero import LEDBoard
+from time import sleep
+
+rainbow = LEDBoard(21, 20, 16, 12, 7, 8, 25, 23)
+sleep_speed = 1
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		for color in rainbow:
+			color.on()
+			sleep(sleep_speed)
+			color.off()
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		rainbow.close()
+		exit()
+```
+
