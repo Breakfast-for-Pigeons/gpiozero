@@ -68,3 +68,54 @@ while True:
 		exit()
 ```
 
+Setting  up the LEDs using LEDBoard, allows you to access individual LEDs using indexing.
+
+```python
+from gpiozero import LEDBoard
+from time import sleep
+
+rainbow = LEDBoard(21, 20, 16, 12, 7, 8, 25, 23)
+sleep_speed = 0.05
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		rainbow[0].on()			# Turn on the first LED (pin 21).
+		sleep(sleep_speed)
+		rainbow[4].on()			# Turn on the fifth LED (pin 7).
+		sleep(sleep_speed)
+		rainbow[0].off()		# Turn off the first LED (pin 21).
+		sleep(sleep_speed)
+		rainbow[4].off()		# Turn off the fifth LED (pin 7).
+		sleep(sleep_speed)
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		rainbow.close()
+		exit()
+```
+
+You can also assign names to the LEDs and reference them that way.
+
+```python
+from gpiozero import LEDBoard
+from time import sleep
+
+rainbow = LEDBoard(red=21, orange=20, yellow=16, green=12, blue=7, purple=8, pink=25, white=23)
+sleep_speed = 0.05
+
+print("Press Crtl-C to stop the program.")
+while True:	
+	try:
+		rainbow.red.on()
+		sleep(sleep_speed)
+		rainbow.red.off()
+		sleep(sleep_speed)
+		rainbow.orange.on()
+		sleep(sleep_speed)
+		rainbow.orange.off()
+		sleep(sleep_speed)
+	except KeyboardInterrupt:
+		print("Stopping program.\n")
+		rainbow.close()
+		exit()
+```
