@@ -1,4 +1,5 @@
 # LED with variable brightness
+These are my experiments based on the documentation here: https://gpiozero.readthedocs.io/en/stable/recipes.html#led-with-variable-brightness and here: https://gpiozero.readthedocs.io/en/stable/api_output.html#pwmled
 
 ![gpiozero_led](https://user-images.githubusercontent.com/13591438/38166944-4cff442c-34f2-11e8-80c0-6682a3f5df55.png)
 
