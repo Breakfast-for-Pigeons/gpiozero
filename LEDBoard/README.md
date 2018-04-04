@@ -2,7 +2,7 @@
 These are my experiments based on the documentation here: https://gpiozero.readthedocs.io/en/stable/recipes.html#ledboard
 and here: https://gpiozero.readthedocs.io/en/stable/recipes_advanced.html#ledboard
 
-![gpiozero_ledboard](https://user-images.githubusercontent.com/13591438/38169094-33b83b98-3526-11e8-940e-045f3ab87f04.png)
+![gpiozero_ledboard 3](https://user-images.githubusercontent.com/13591438/38317682-3aca7a52-37f3-11e8-954c-2c7d07b23934.png)
 
 Here is an example based on the one given in the gpio documentation. It will first turn on all LEDs. Next, it will turn off all LEDs. Third, it sets the values of the LEDS: 1 is on, 0 is off. So LEDs 1, 3, 5, and 7 will be on, and LEDs 2, 4, 6, and 8 will be off. Fourth, it will blink the LEDs. Since the odd numbered LEDs were set to a value of 1, they will always be on. Only the even numbered LEDs will blink. NOTE: When I say "odd" and "even", I'm not referring to the pin numbers; I'm referring to the order in which they were listed. In the example below, pin assignments 21, 16, 7, and 25 are the odd LEDs and the others are even.
 
