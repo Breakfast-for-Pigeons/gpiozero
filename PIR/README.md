@@ -31,6 +31,5 @@ while True:
 ```
 
 Things I learned about using PIRs with the Raspberry Pi:
-* Don't connect to GPIO pin 2 or pin 3. You'll get the following message:\n
-    gpiozero.exec.PinFixedPull: GPIO2 has a physical pull-up resistor\n
-    gpiozero.exec.PinFixedPull: GPIO3 has a physical pull-up resistor
+* Don't connect to GPIO pin 2 or pin 3. You'll get the following message:
+   > gpiozero.exec.PinFixedPull: GPIO2 has a physical pull-up resistor
